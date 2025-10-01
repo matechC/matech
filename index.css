@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+}
+
+.encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px 20px;
+  position: relative;
+  box-shadow:0px 0px 10px 0px;
+}
+
+.menu-toggle {
+  background-color:transparent;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  cursor: pointer;
+  position: fixed;
+  top: 18px;
+  left: 10px;
+  z-index: 1001;
+  border-radius: 5px;
+}
+
+/* Menú lateral */
+.menu {
+  width: 250px;
+  height: 100vh;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  position: fixed;
+  top: 0;
+  left: -250px;
+    font-size: 1.2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  /* Oculto fuera de pantalla */
+  overflow-y: auto;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.menu.open {
+  left: 0;
+  /* Visible */
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  padding: 15px;
+  border-bottom: 1px solid #ababab;
+}
+
+.menu li:hover {
+  background-color: #b9b9b9;
+  cursor: pointer;
+}
+
+.menu a{
+  color: #000;
+    text-decoration: none;
+}
+
+.logo-centro img {
+  max-height: 60px;
+  margin-left: 50%;
+}
+
+.buscador-derecha {
+  position: relative;
+
+}
+
+.icono-busqueda {
+  background-color: #ffffff;
+  color: #ffffff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.icono-busqueda svg {
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  fill: rgb(255, 255, 255);
+}
+
+.campo-busqueda {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  z-index: 999;
+}
+
+.campo-busqueda input {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 5px;
+}
+
+.campo-busqueda button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.buscador-derecha input {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.buscador-derecha button {
+  background-color: transparent;
+  color: #000000;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bienvenida {
+  text-align: center;
+  padding: 60px 20px 20px;
+}
+
+.bienvenida h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.bienvenida p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+.boton-ver {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.collage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px;
+  gap: 20px;
+}
+
+.collage .item img {
+  width: 200px;
+  height: auto;
+  border-radius: 0px;
+  transition: 0.3s ease;
+}
+
+.collage .item img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .encabezado-flex {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .logo-centro {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .buscador-derecha {
+    display: none;
+  }
+}
