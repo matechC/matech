@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Catálogo Matech</title>
+  <link rel="stylesheet" href="Bombillas.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+    <div class="encabezado">
+      <div class="encabezado-flex">
+        <!-- Botón / Logo -->
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+        <!-- Menú lateral -->
+        <div class="menu" id="menu">
+          <br><br>
+          <br><br>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Productos.html">Productos</a></li>
+            <li><a href="inicio.html">Contactos</a></li>
+            <li><a href="inicio.html">Nosotros</a></li>
+
+        
+          </ul>
+
+  </header>
+  
+
+          </button>
+
+        </button>
+        <div class="campo-busqueda" id="campoBusqueda">
+          <input type="text" id="buscar" placeholder="Buscar..." onkeyup="filtrarProductos()" />
+          <button onclick="filtrarProductos()">Buscar</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </header>
+
+  <div class="Logo">
+    <img src="ImagenesMatech/MatechlogoCatalogo.png" alt="Mate Negro">
+  </div>
+
+  <div class="catalogo">
+
+    <div class="producto">
+      <img src="/ImagenesMatech/BombillonCinceladoArtesanaldeAlpacaUruguayo.png" alt="Mate Cobre">
+      <h3>Bombillon Cincelado Artesanal De Alpaca Uruguayo</h3>
+      <p class="precio">$27.000</p>
+      <button onclick="agregarPedido('Bombillon Cincelado Artesanal De Alpaca Uruguayo - $27.000')">Agregar al pedido</button>
+    </div>
+
+    <div class="producto">
+      <img src="/ImagenesMatech/PicoLoro.png" alt="Mate Cobre">
+      <h3>Bombilla Pico de Loro</h3>
+      <p class="precio">$5.400</p>
+      <button onclick="agregarPedido('Bombilla Pico de Loro - $5.400')">Agregar al pedido</button>
+    </div>
+
+    <div class="producto">
+      <img src="/ImagenesMatech/PicoLoroCincelada.png" alt="Mate Cobre">
+      <h3>Bombilla Pico de Loro Cincelada</h3>
+      <p class="precio">$7.900</p>
+      <button onclick="agregarPedido('Bombilla Pico de Loro Cincelada - $7.900')">Agregar al pedido</button>
+    </div>
+
+    <!-- Agregá más productos copiando y cambiando los datos -->
+  </div>
+
+  <div id="pedido">
+    <h2>Tu pedido:</h2>
+    <ul id="lista-pedido"></ul>
+    <button onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
+  </div>
+
+  <script>
+    const lista = [];
+
+    function agregarPedido(producto) {
+      lista.push(producto);
+      actualizarLista();
+    }
+
+    function actualizarLista() {
+      const ul = document.getElementById("lista-pedido");
+      ul.innerHTML = "";
+      lista.forEach(item => {
+        const li = document.createElement("li");
+        li.innerText = item;
+        ul.appendChild(li);
+      });
+    }
+
+    function enviarWhatsApp() {
+      if (lista.length === 0) {
+        alert("No hay productos en el pedido.");
+        return;
+      }
+      const mensaje = encodeURIComponent("Hola, quiero encargar los siguientes productos:\n\n" + lista.join("\n"));
+      const numero = "543535626288"; // Tu número con código país (54 para Argentina)
+      const url = `https://wa.me/${numero}?text=${mensaje}`;
+      window.open(url, "_blank");
+    }
+
+     
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("open");
+    }
+
+    const buscador = document.getElementById('buscador');
+    const elementos = document.querySelectorAll('#lista li');
+
+    buscador.addEventListener('keyup', () => {
+      const filtro = buscador.value.toLowerCase();
+      elementos.forEach(el => {
+        const texto = el.textContent.toLowerCase();
+        el.classList.toggle('oculto', !texto.includes(filtro));
+      });
+    });
+
+    function mostrarBuscador() {
+      const campo = document.getElementById("campoBusqueda");
+      campo.style.display = campo.style.display === "block" ? "none" : "block";
+    }
+
+  </script>
+
+</body>
+
+</html>
