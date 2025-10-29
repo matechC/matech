@@ -559,3 +559,47 @@ body {
     font-size: 0.9rem;
   }
 }
+/* === Mostrar el buscador también en el celular === */
+@media (max-width: 768px) {
+  .buscador-derecha {
+    display: block !important; /* vuelve a hacerlo visible */
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  .icono-busqueda {
+    background-color: transparent;
+    color: #000;
+    font-size: 20px;
+    border: none;
+  }
+
+  .campo-busqueda {
+    position: absolute;
+    top: 45px;
+    right: 10px;
+    background: white;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 999;
+  }
+
+  .campo-busqueda input {
+    width: 150px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .campo-busqueda button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
