@@ -396,14 +396,34 @@ body {
 }
 
 /* ==== SLIDER ==== */
+/* === Imagen fija estilo slider === */
 .slider {
-  position: relative;
-  max-width: 100%;
-  height: 80vh;
+  width: 100%;
+  height: 80vh; /* alto de la imagen en pantalla */
   overflow: hidden;
-  border-radius: 10px;
-  margin: 0 auto;
+  position: relative;
 }
+
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ajusta sin deformar */
+  display: block;
+}
+
+/* Ajustes para celular */
+@media (max-width: 768px) {
+  .slider {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    height: 40vh;
+  }
+}
+
 
 .slider .slides {
   display: flex;
@@ -489,7 +509,7 @@ body {
 
 @media (max-width: 480px) {
   .catalogo {
-    grid-template-columns: 4fr;
+    grid-template-columns: 1fr;
   }
   .catalogo .producto {
     max-width: 90%;
@@ -539,5 +559,3 @@ body {
     font-size: 0.9rem;
   }
 }
-
-
