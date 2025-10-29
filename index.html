@@ -29,7 +29,7 @@
             <li><a href="inicio.html">Contactos</a></li>
             <li><a href="inicio.html">Nosotros</a></li>
 
-        
+
           </ul>
 
         </div>
@@ -65,34 +65,119 @@
     </div>
   </header>
 
+  <section class="slider">
+  <div class="slides">
+    <img src="ImagenesMatech/Bienvenidos.jpg" alt="Slide 1">
+    <img src="ImagenesMatech/Redes.jpg" alt="Slide 2">
+    <img src="ImagenesMatech/Calidad.jpg" alt="Slide 3">
+    <img src="ImagenesMatech/Promociones.jpg" alt="Slide 4">
+    <img src="ImagenesMatech/Matech.jpg" alt="Slide 5">
+  </div>
+</section>
+
   <section class="bienvenida">
-    <h1>Bienvenidos a Matech</h1>
-    <p>Descubrí nuestros mates únicos, termos y accesorios personalizados con estilo. Elegí, encargá y disfrutá del
-      ritual del mate como nunca.</p>
+    <h1>Descubrí nuestros mates únicos, termos y accesorios personalizados con estilo. Elegí, encargá y disfrutá del
+      ritual del mate como nunca.</h1>
     <br />
-    <a href="Productos.html" class="boton-ver">Ver Productos</a>
+    <a href="Productos.html" class="boton-ver">Todos los Productos</a>
   </section>
-  <script>
-    function toggleMenu() {
-      document.getElementById("menu").classList.toggle("open");
-    }
 
-    const buscador = document.getElementById('buscador');
-    const elementos = document.querySelectorAll('#lista li');
+      <div class="catalogo">
+        <div class="producto">
+            <a href="Mates.html">
+                <img src="/ImagenesMatech/Mates.png" alt="Mate Negro">
+            </a>
+            <h3>Mates</h3>
+        </div>
 
-    buscador.addEventListener('keyup', () => {
-      const filtro = buscador.value.toLowerCase();
-      elementos.forEach(el => {
-        const texto = el.textContent.toLowerCase();
-        el.classList.toggle('oculto', !texto.includes(filtro));
-      });
-    });
+        <div class="producto">
+            <a href="Bombillas.html">
+                <img src="/ImagenesMatech/Bombilla.png" alt="Imperial Acero Liso Botita">
+            </a>
+            <h3>Bombillas</h3>
+        </div>
 
-    function mostrarBuscador() {
-      const campo = document.getElementById("campoBusqueda");
-      campo.style.display = campo.style.display === "block" ? "none" : "block";
-    }
-  </script>
+        <div class="producto">
+            <a href="Termos.html">
+                <img src="/ImagenesMatech/Termo.png" alt="Imperial Alpaca Botita CD Cincelado Aplique">
+            </a>
+            <h3>Termos</h3>
+        </div>
+
+        <div class="producto">
+            <a href="Materas.html">
+                <img src="/ImagenesMatech/Matera.png" alt="Mate Cobre">
+            </a>
+            <h3>Materas</h3>
+        </div>
+
+        <div class="producto">
+            <a href="Yerberas.html">
+                <img src="/ImagenesMatech/Yerberas.png" alt="Yerbera Algarrobo">
+            </a>
+            <h3>Yerberas</h3>
+        </div>
+    </div>
+
+<br>
+    
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">
+    <h2>Matech</h2>
+  </div>
+
+  <div class="footer-redes">
+    <a href="https://www.instagram.com/matech_ch/" target="_blank" aria-label="Instagram Matech">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61578605530394" target="_blank" aria-label="Facebook Matech">
+      <i class="fab fa-facebook"></i>
+    </a>
+  </div>
+
+  <ul class="footer-links">
+    <li><a href="InicioMatech.html">Inicio</a></li>
+    <li><a href="Productos.html">Productos</a></li>
+    <li><a href="#">Nosotros</a></li>
+    <li><a href="#">Contacto</a></li>
+  </ul>
+
+  <div class="footer-contacto">
+    <p><i class="fa-brands fa-whatsapp"></i> +54 9 3535 62-6288</p>
+    <p><i class="fa-solid fa-envelope"></i> matech_cba@gmail.com</p>
+    <p><i class="fa-solid fa-location-dot"></i> Chazón, Córdoba, Argentina</p>
+  </div>
+
+  <p class="footer-copy">© 2025 Matech - Todos los derechos reservados.</p>
+</footer>
+
+<!-- BOTÓN FLOTANTE DE WHATSAPP -->
+<a href="https://wa.me/5493535626288" class="whatsapp" target="_blank" aria-label="Chat de WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
 </body>
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("open");
+  }
+
+  const buscador = document.getElementById('buscador');
+  const elementos = document.querySelectorAll('#lista li');
+
+  buscador.addEventListener('keyup', () => {
+    const filtro = buscador.value.toLowerCase();
+    elementos.forEach(el => {
+      const texto = el.textContent.toLowerCase();
+      el.classList.toggle('oculto', !texto.includes(filtro));
+    });
+  });
+
+  function mostrarBuscador() {
+    const campo = document.getElementById("campoBusqueda");
+    campo.style.display = campo.style.display === "block" ? "none" : "block";
+  }
+</script>
 
 </html>
